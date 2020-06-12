@@ -22,3 +22,25 @@ def compareTriplets():
         elif a[i] < b[i]:
             bpoints += 1
     return [apoints, bpoints]
+
+# 3) Two cats and a mouse are at various positions on a line. You will be given their starting positions. Your task is to determine
+# which cat will reach the mouse first, assuming the mouse doesn't move and the cats travel at equal speed. If the cats arrive at
+# the same time, the mouse will be allowed to move and it will escape while they fight.
+# https://www.hackerrank.com/challenges/cats-and-a-mouse/problem
+
+def catAndMouse():
+    print("\nCheck if either cat a or cat b will reach mouse c first, or it will escape\n")
+    xyz = input("Respective values of x (cat a's location), y (cat b's location), and z (mouse c's location) separated by space\n").split()
+    x = int(xyz[0])
+    y = int(xyz[1])
+    z = int(xyz[2])
+
+    cat_a = abs(z - x)
+    cat_b = abs(z - y)
+
+    if cat_a < cat_b:
+        return "Cat A"
+    elif cat_a > cat_b:
+        return "Cat B"
+    else:
+        return "Mouse C"
